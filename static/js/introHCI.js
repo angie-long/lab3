@@ -12,17 +12,18 @@ function initializePage() {
 	$("#testjs").click(function(e) {
 		//$('.jumbotron h1').text("Javascript is connected");
 		$('#testjs').text("Javascript has taken control");
-		$("jumbotron p").addClass("active");
-		$(". jumbotron p").toggleClass("active");
+		$(".jumbotron p").toggleClass("active");
 	});
+
+	$('.project').click(projectClick);
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 
 }
 
-function projectClick(){
-
+function projectClick(e){
+	e.preventDefault();
 	var containingProject = $(this).closest(".project");
 	containingProject.append("<div class='project-description'><p>Description of the project.</p></div>");
 	//$(#"myelement").toggle()
